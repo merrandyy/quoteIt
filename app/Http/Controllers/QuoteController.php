@@ -14,42 +14,18 @@ class QuoteController extends Controller
      */
     public function index()
     {
-        $quotes = Quote::all()->orderByDesc('created_at')->limit(20)->get();
+        $quotes = Quote::latest()->limit(20)->get();
         return view('welcome', compact('quotes'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(QuoteRequest $request)
     {
-        // dd(Auth::user());
-        $quote = Auth::user()->quotes()->create($request->validated());
+        Auth::user()->quotes()->create($request->validated());
         return redirect()->back();
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
     }
 
     /**

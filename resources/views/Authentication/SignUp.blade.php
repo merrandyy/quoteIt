@@ -5,15 +5,15 @@
 <div class="grid h-full grid-cols-1 md:grid-cols-2">
 
     <div class=" items-center justify-center p-8">
-        <form  method="post" enctype="multipart/form-data" class="mx-auto  mt-15 max-w-xl rounded-lg  p-9 ">
+        <form method="post" enctype="multipart/form-data" class="mx-auto  mt-15 max-w-xl rounded-lg  p-9 ">
             @csrf
-            <h2 class="mb-4 text-2xl font-bold  text-center">Sign Up</h2>
+            <h2 class="mb-4 text-2xl font-bold  text-center text-white">Sign Up</h2>
             <div class="mb-4">
                 <label for="name" class="label">Name</label>
                 <input id="name" name="name" type="text" class="input peer user-invalid:border-red-500"
                     required minlength="2" maxlength="50" pattern="[A-Za-z\u0600-\u06FF ]+">
 
-                <p class="mt-1 text-xs text-gray-500 peer-user-invalid:text-red-600">
+                <p class="mt-1 text-xs text-white peer-user-invalid:text-red-600">
                     2–50 characters, letters only.
                 </p>
             </div>
@@ -21,7 +21,7 @@
                 <label for="email" class="label">Email</label>
                 <input id="email" name="email" type="email" class="input peer user-invalid:border-red-500" required
                     pattern="[^@\s]+@[^@\s]+\.[A-Za-z]{2,}">
-                <p class="mt-1 text-xs text-gray-500 peer-user-invalid:text-red-600">
+                <p class="mt-1 text-xs text-white peer-user-invalid:text-red-600">
                     A valid email, e.g. name@example.com
                 </p>
             </div>
@@ -30,11 +30,12 @@
                 <label for="password" class="label">Password</label>
                 <input id="password" name="password" type="password" class="input peer user-invalid:border-red-500" required
                     minlength="8">
-                <p class="mt-1 text-xs text-gray-500 peer-user-invalid:text-red-600">
+                <p class="mt-1 text-xs text-white peer-user-invalid:text-red-600">
                     At least 8 characters.
                 </p>
             </div>
-            <p class="mb-4 text-sm text-gray-500">
+
+            <p class="mb-4 text-sm text-white">
                 You Already have an account? <a href="/login" class="text-blue-500 hover:underline">Log In</a>
             </p>
 
