@@ -1,27 +1,38 @@
 @extends('Layout.app')
 
-@section('title', 'Sign Up')
+@section('title', 'Log In')
 @section('content')
     <div class="grid h-full grid-cols-1 md:grid-cols-2">
 
         <div class=" items-center justify-center p-8">
             <form method="post" class="mx-auto  mt-15 max-w-xl rounded-lg  p-9 ">
                 @csrf
-                <h2 class="mb-4 text-2xl font-bold  text-center">Log in </h2>
+                <h2 class="mb-4 text-2xl font-bold  text-center text-white">Log in </h2>
                 <div class="mb-4">
                     <label for="email" class="label">Email</label>
-                    <input type="email" name="email" id="email"
-                        class="input @error('email') border-red-500 @enderror" required>
+                    <input type="email" name="email" id="email" class="input @error('email') border-red-500 @enderror"
+                        required>
+                    <p class="mt-1 text-xs text-white peer-user-invalid:text-red-600">
+                        A valid email, e.g. name@example.com
+                    </p>
                 </div>
                 <div class="mb-4">
                     <label for="password" class="label">Password</label>
                     <input type="password" name="password" id="password"
                         class="input @error('password') border-red-500 @enderror" required>
+                    <p class="mt-1 text-xs text-white peer-user-invalid:text-red-600">
+                        At least 8 characters.
+                    </p>
                     @error('password')
                         <p class="text-red-500 text-sm">{{ $message }}</p>
                     @enderror
                 </div>
-                <button type="submit" class="btn-primary w-full">Sign Up</button>
+
+                 <p class="mb-4 text-sm text-white">
+                You Don't have an account? <a href="/signup" class="text-blue-500 hover:underline">Sign Up</a>
+            </p>
+
+                <button type="submit" class="btn-primary w-full">Log In</button>
             </form>
         </div>
         <div class="hidden md:block ">

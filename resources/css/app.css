@@ -21,9 +21,27 @@
 
     }
     .label {
-        @apply block mb-1 font-semibold;
+        @apply text-white mb-1 font-semibold ;
     }
     .input {
-        @apply w-full rounded-lg border border-gray-300 px-4 py-2 text-gray-700 placeholder-gray-400 focus:border-tuwaiq-purple focus:ring focus:ring-tuwaiq-purple/30;
+        @apply w-full rounded-lg border border-gray-300 px-4 py-2 text-white placeholder-gray-400 focus:border-tuwaiq-purple focus:ring focus:ring-tuwaiq-purple/30;
     }
+}
+
+.site-name {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    font: 800 1.8rem Georgia, serif;
+    letter-spacing: 1px;
+
+    background: linear-gradient(90deg,#4fc9b0,#938BB8,#f2a54a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.site-name:hover {
+    transform: translate(-50%, -50%) scale(1.08);
 }

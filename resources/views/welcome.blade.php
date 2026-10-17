@@ -19,7 +19,7 @@
         @endif
 
         <section class="space-y-4">
-            <h2 class="text-2xl font-bold">Quotes</h2>
+            <h2 class="text-2xl font-bold text-white">Quotes</h2>
 
             @forelse ($quotes as $quote)
                 @php $isMine = auth()->check() && $quote->user_id === auth()->id(); @endphp
